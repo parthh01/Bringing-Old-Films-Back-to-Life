@@ -78,13 +78,13 @@ def resize_368_short_side(img):
     width, height = frame_pil.size
 
     if width<height:
-        new_height =  int (368 * height / width)
+        new_height =  int (480 * height / width)
         new_height = new_height // 16 * 16
-        new_width = 368
+        new_width = 480
     else:
-        new_width =  int (368 * width / height)
+        new_width =  int (480 * width / height)
         new_width = new_width // 16 * 16
-        new_height = 368
+        new_height = 480
     
     frame_pil = frame_pil.resize((new_width,new_height),resample=Image.BILINEAR)
     return transfer_2(frame_pil.convert("RGB"))
